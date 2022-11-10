@@ -1,0 +1,7672 @@
+<!DOCTYPE html>
+<html lang="en"
+    class="">
+  <head>
+    <!-- Comment : PWA entry point seized below, this will redirect app to PWA -->
+    <!--<script type="text/jscript" src="/modules/explorer/_static/js/mobile_redirect.js" charset="utf-8"></script>-->
+    <base href="https://onlinecourses.nptel.ac.in/noc22_cs72/" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="https://storage.googleapis.com/swayam2-node/assets/img/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/180x180.png">
+    <link rel="icon" type="image/png" sizes="196x196" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/196x196.png">
+    <meta charset="utf-8">
+
+  <title>
+    Data Science for Engineers -
+
+
+  Course Progress
+
+  </title>
+
+    <!-- jQuery should be imported first -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://storage.googleapis.com/swayam2-node/modules/ajax_registry/assets/js/registry.js"></script>
+
+
+    <!-- The following translated strings are used in activity-generic.js and should be
+    declared before that file is imported. -->
+    <script>
+      // inline translations
+      var trans = {};
+
+
+      trans.CHECK_ANSWER_TEXT =
+          " Check Answer ";
+
+
+      trans.CHECK_ANSWERS_TEXT =
+          " Check Answers ";
+
+
+      trans.SHOW_ANSWER_TEXT =
+          " Skip and Show Answer ";
+
+
+      trans.SAVE_ANSWERS_TEXT =
+          " Save Answers ";
+
+
+      trans.SAVE_DRAFT_TEXT =
+          " Save Draft ";
+
+
+      trans.SUBMIT_ANSWERS_TEXT =
+          " Submit Answers ";
+
+
+      trans.SUBMIT_ASSIGNMENT_TEXT =
+          " Submit Assignment ";
+
+
+      trans.SUBMIT_REVIEW_TEXT =
+          " Submit Review ";
+
+
+      trans.SELECT_ANSWER_PROMPT =
+          " Please click one of the buttons for your answer. ";
+
+
+      trans.ALL_CORRECT_TEXT =
+          " All your answers are correct! ";
+
+
+      trans.NUM_CORRECT_TEXT =
+          " Number of questions you answered correctly ";
+
+
+      trans.YOUR_SCORE_TEXT =
+          " You received a score on this assessment of ";
+
+
+      trans.LESSONS_TO_REVIEW_TEXT =
+          " Here are lessons you could review to improve your score ";
+
+
+      trans.PERFECT_SCORE_SAVE_TEXT =
+          " Congratulations! Press the \'Submit Answers\' button to submit your grade. ";
+
+
+      trans.GENERIC_SAVE_TEXT =
+          " Press the \'Submit Answers\' button below to save your scores. You can also edit your answers above before clicking \'Submit Answers\'. ";
+
+
+      trans.SUBMIT_ASSIGNMENT_CONFIRMATION =
+          " Are you sure you want to submit this assignment? ";
+
+
+      trans.SUBMIT_REVIEW_CONFIRMATION =
+          " Are you sure you want to submit this review? ";
+
+
+      trans.CONFIRMATION_EXPLANATION =
+          " You cannot edit or delete it after you have done so. ";
+    </script>
+
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="icon" href="https://storage.googleapis.com/swayam2-node/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="152x152" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/180x180.png">
+  <link rel="icon" type="image/png" sizes="196x196" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/196x196.png">
+  <link href="https://storage.googleapis.com/swayam2-node/assets/css/main.css" rel="stylesheet" type="text/css">
+  <link href="https://storage.googleapis.com/swayam2-node/modules/nptel/assets/css/nptel.css" rel="stylesheet" type="text/css">
+  <link href="https://storage.googleapis.com/swayam2-node/modules/nptel/assets/css/chosen.min.css" rel="stylesheet" type="text/css">
+  <!-- Comment: Upto  max device width 992px will be considered as Mobile Device & responsive css loaded there -->
+  <link href="https://storage.googleapis.com/swayam2-node/assets/css/minimal.mobile.css" rel="stylesheet" type="text/css"
+        media="only screen and (max-device-width: 992px)">
+  <link rel="stylesheet" href="/static/material-design-icons/css/material-design-iconic-font.min.css">
+
+<style>
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fafafa;
+  z-index: 1000;
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: 0.5s;
+  box-shadow: 0 5.5px 5px 0 rgba(0, 0, 0, 0.24), 0 9px 18px 0 rgba(0, 0, 0, 0.18);
+}
+
+.sidenav a {
+  padding: 15px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #1c1c28;
+  display: block;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.sidenav a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidenav div.active a{
+  font-weight: bold;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 32px;
+  padding-right: 0px;
+}
+
+#courseSidenavHeader{
+  min-height: 100px;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  padding-right: 50px;
+  white-space: normal;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media only screen and (min-device-width: 992px) {
+    .outlineHeaderMobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-device-width: 991px){
+    .outlineHeaderMobile {
+        display: block;
+    }
+}
+
+</style>
+
+  <!-- jQuery should be imported first -->
+  <script src="https://storage.googleapis.com/swayam2-node/static/jquery/jquery.min.js"></script>
+  <script src="https://storage.googleapis.com/swayam2-node/modules/nptel/assets/js/chosen.jquery.min.js"></script>
+  <script src="https://storage.googleapis.com/swayam2-node/modules/oeditor/_static/js/butterbar.js"></script>
+  <link rel="stylesheet" type="text/css"
+      href="https://storage.googleapis.com/swayam2-node/modules/oeditor/_static/css/butterbar.css" media="screen" />
+  <script src="https://storage.googleapis.com/swayam2-node/modules/nptel/assets/js/main.js"></script>
+
+  <!--<script src="//www.google.com/jsapi" type="text/javascript"></script>-->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type='text/javascript'>
+    function addScript(src, callback) {
+      var r = false;
+      var existed = true;
+      var element = document.getElementById(src);
+      if (!element) {
+        existed = false;
+        element = document.createElement('script');
+        element.src = src;
+        element.type = 'text/javascript';
+        element.setAttribute('id', src);
+      }
+      if (callback != null) {
+        element.onload = element.onreadystatechagne = function() {
+          if (!r && (!this.readyState || this.readyState == 'complete')) {
+            r = true;
+            callback();
+          }
+        }
+      }
+      if (!existed) document.body.appendChild(element);
+    }
+    function getStudentProgress() {
+
+      ajax_server.get_progress();
+
+    }
+    function prettyfyCode() {
+      prettyPrint();
+    }
+    function showButterBar() {
+
+      var regConfirmationMsg = "Thank you for registering for the course. Click the Announcements tab for important information.";
+      if(window.location.hash == '#registration_confirmation') {
+        cbShowMsg(regConfirmationMsg);
+        setTimeout(function() {cbHideMsg();}, 20000);
+      }
+
+      var regClosedMsg = "Registrations for this course are not open.";
+      if(window.location.hash == '#registration_closed') {
+        cbShowMsg(regClosedMsg);
+        setTimeout(function() {cbHideMsg();}, 20000);
+      }
+    }
+    function loadOtherJs(callback) {
+      var c = getStudentProgress;
+      if (null != callback) {
+        c = function() {
+           callback();
+           getStudentProgress();
+        }
+      }
+      addScript('https://storage.googleapis.com/swayam2-node/assets/lib/google-code-prettify/prettify.js', prettyfyCode);
+      addScript('https://storage.googleapis.com/swayam2-node/modules/nptel/assets/js/activity-generic-1.3.js', null);
+      addScript('https://storage.googleapis.com/swayam2-node/modules/nptel/assets/js/main.js', c);
+    }
+    function downloadJsAtLoad() { loadOtherJs(null); }
+
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(downloadJsAtLoad);
+  </script>
+
+  <script>
+  // Comment: Mobile: Open hamburger menu
+  function openNav() {
+    document.getElementById("courseSidenav").style.width = "85%";
+  }
+
+  // Comment: Mobile: Close hamburger menu
+  function closeNav() {
+    document.getElementById("courseSidenav").style.width = "0";
+  }
+
+  // Comment: Mobile: Set header color of hamburger menu similar to Site navbar color
+  $(document).ready(function(){
+      var siteNavbarColor = $("#gcb-nav-x").css("background-color");
+      $("#courseSidenavHeader").css("background-color", siteNavbarColor);
+  });
+
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Course",
+      "@id": "https://onlinecourses.nptel.ac.in/noc22_cs72/",
+      "name": "Data Science for Engineers",
+      "description": "",
+      "provider": {
+        "@type":"Organization",
+        "name":"National Programme on Technology Enhanced Learning",
+        "sameAs":"http://nptel.iitm.ac.in"
+      },
+      "grantsCredential": "False",
+      "isAccessibleForFree" : "",
+
+      "hasCourseInstance" : [
+      {
+        "inLanguage" : "en",
+        "audioLanguage" : ["en"],
+        "startDate" : "2022-07-24T18:30:00.000000Z"
+        }
+      ],
+
+        "image" : "/modules/nptel/assets/img/nptel-logo.png"
+
+    }
+  </script>
+
+
+
+
+
+
+    <script>
+      var eventXsrfToken = '1668094992/JePGrfW-2edpggV5cCl9Zw==';
+
+        var gcbCanRecordStudentEvents = true;
+
+
+
+        var transientStudent = false;
+
+    </script>
+
+
+      <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+
+    <script>
+      function gcb_edit_hook_point(key) {
+        window.location=('dashboard?action=edit_html_hook&key=' +
+            encodeURIComponent(key));
+      }
+      $(function() {
+        // TODO(nretallack): This duplicates code in
+        // modules/dashboard/resources/js/view.js.
+        function parseJson(s) {
+          var xssiPrefix = ")]}'";
+          return JSON.parse(s.replace(xssiPrefix, ''));
+        }
+
+        $("#locale-select").change(function() {
+          var localeSelect = $("#locale-select");
+          var request = JSON.stringify({
+            xsrf_token: localeSelect.data("xsrf-token"),
+            payload: {
+              selected: localeSelect.val()
+            }
+          });
+          $.ajax({
+            url: "rest/locale",
+            type: "POST",
+            data: {request: request},
+            dataType: "text",
+            success: function(data) {
+              data = parseJson(data);
+              if (data.status == 200) {
+                window.location.reload();
+              }
+            }
+          });
+        });
+      });
+    </script>
+
+
+
+
+
+
+    <div class="gcb-html-hook" id="base-before-head-tag-ends"><!-- base.before_head_tag_ends --></div>
+  </head>
+
+  <body data-gcb-page-locale="en_US">
+    <div class='invisiblePopupDiv' id='termsDiv'>
+       <div class='gcb-pull-right'>
+       <a href="" class='closeXButton' onClick='hidePopupDiv("termsDiv"); return false;'>X</a>
+       </div>
+       <iframe src='https://storage.googleapis.com/swayam2-node/modules/nptel/assets/html/terms.html' class='popupIframe'></iframe>
+      </div>
+    <div class='invisiblePopupDiv' id='honorDiv'>
+       <div class='gcb-pull-right'>
+       <a href="" class='closeXButton' onClick='hidePopupDiv("honorDiv"); return false;'>X</a>
+       </div>
+       <iframe src='https://storage.googleapis.com/swayam2-node/modules/nptel/assets/html/honor_code.html' class='popupIframe'></iframe>
+      </div>
+    <div class='invisiblePopupDiv' id='faqDiv'>
+       <div class='gcb-pull-right'>
+       <a href="" class='closeXButton' onClick='hidePopupDiv("faqDiv"); return false;'>X</a>
+       </div>
+       <iframe src='https://storage.googleapis.com/swayam2-node/modules/nptel/assets/html/faq.html' class='popupIframe'></iframe>
+    </div>
+
+    <div class="gcb-html-hook" id="base-after-body-tag-begins"><!-- base.after_body_tag_begins --></div>
+
+
+      <script>
+        // Course-Builder specific setup for Google Tag Manager.  Iff
+        // Tag Managers is enabled, the values in the dataLayer list of
+        // dicts is made available to Tag Manager macros.
+        dataLayer = [{
+          'course_title': 'Data Science for Engineers',
+          'event': 'default',  // Explicit value meaning not-really-set.
+          }];
+
+        function gcbSetPageInfo(dict) {
+          dataLayer.push(dict);
+        }
+
+        // Invoke page-specific block so that any calls to gcbReportPageInfo()
+        // are made before we hit the Tag Manager call, below.
+
+  if ('gcbSetPageInfo' in window) {
+    gcbSetPageInfo({
+      'page_type': 'student_profile',
+    });
+  }
+
+      </script>
+
+
+
+
+    <!-- ButterBar -->
+    <div class="gcb-butterbar-container">
+      <div id="gcb-butterbar-top" class="gcb-butterbar" style="margin-top:50px" aria-live="polite">
+        <p id="gcb-butterbar-message"></p>
+        <a id="gcb-butterbar-close">X</a>
+      </div>
+    </div>
+
+
+        <!-- header starts -->
+        <!-- Swayam CSS -->
+<link href="https://storage.googleapis.com/swayam2-node/assets/css/swayam_css/bootstrap.min.css" rel="stylesheet">
+<!--<link href="https://storage.googleapis.com/swayam2-node/assets/css/swayam_css/main.css" rel="stylesheet">-->
+<link rel="icon" href="https://storage.googleapis.com/swayam2-node/assets/img/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="152x152" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/180x180.png">
+<link rel="icon" type="image/png" sizes="196x196" href="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/ico/196x196.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Swayam JS -->
+<script src="https://storage.googleapis.com/swayam2-node/assets/js/swayam_js/jquery.js"></script>
+<script src="https://storage.googleapis.com/swayam2-node/assets/js/swayam_js/bootstrap.min.js"></script>
+
+<style>
+    /* Overriding from nptel.css */
+    #gcb-nav-x {
+        background-color: #993333;
+    }
+
+    #gcb-nav-x > .gcb-aux > a,
+    #gcb-nav-x > .gcb-aux > a:visited,
+    #gcb-nav-x > .gcb-aux {
+        color: #ffffff;
+    }
+
+    .dropdown>a:focus, .dropdown>a:hover, .dropdown>a:active {
+    text-decoration: none;
+    }
+
+    .top-bar {
+        padding: 5px 0;
+        color: #333333;
+        font-size: 10px;
+        font-weight: 500
+    }
+
+    .top-navigation {
+        text-align: right
+    }
+
+    @media (max-width: 767px) {
+        .top-navigation {
+            text-align: center
+        }
+    }
+
+    @media (max-width: 767px) {
+        .top-left {
+            text-align: center
+        }
+    }
+
+    .top-navigation {
+      font-size: 14px;
+      margin: 15px 0;
+    }
+
+    .top-navigation a {
+        color: #666666;
+        padding: 0px 4px 0px 4px;
+        font-size: 14px;
+        font-weight: 300
+    }
+
+    .top-navigation a:hover {
+      color: #0099cc;
+      text-decoration: none;
+    }
+
+    .navbar {
+        margin: 0px;
+        background: #FFFFFF;
+        padding: 0px;
+        border: none
+    }
+
+    .navbar-brand{
+        padding: 0;
+        float: none;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .dropdown-menu>li>a {
+        padding: 5px 15px 5px 15px
+    }
+
+    .dropdown-menu>li:hover>a,
+    .dropdown-menu>li>a:focus,
+    .dropdown-menu>li>a:active {
+        color: #FFFFFF;
+        background:#0099cc;
+    }
+
+    .dropdown-menu li:first-child{
+        border-top: 4px solid #ff8811;
+        padding-top:10px;
+    }
+
+    .dropdown-menu li:last-child{
+        padding-bottom:10px;
+    }
+
+    .dropdown-menu li:hover .normalimg,
+    .dropdown-menu li a:hover .normalimg,
+    .dropdown-menu li a:focus .normalimg{
+        display:none;
+    }
+
+    .dropdown-menu li:hover .selectedimg,
+    .dropdown-menu li a:hover .selectedimg,
+    .dropdown-menu li a:focus .selectedimg{
+        display:inline-block;
+    }
+
+    .selectedimg{
+        display:none;
+    }
+
+    .dropdown-menu {
+        background: #ffffff;
+        padding: 0px;
+        margin-right: 5px;
+        margin-top: 20px;
+        text-align: left;
+        right: 0;
+        left: auto;
+    }
+
+    a{
+        color: #347AB7;
+    }
+
+    /* Comment : dropdown menu created specific to mobile responsive version */
+    @media only screen and (max-width: 767px) {
+        .dropdown-menu {
+            width: 250px;
+            margin: auto;
+            margin-top: 20px;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+    }
+</style>
+
+<body>
+<header role="banner">
+    <!--Top Bar [START]-->
+    <div class="top-bar">
+      <div class="container">
+        <div class="row">
+          <!-- Comment: small device griding changed from 3:9 to 4:8 for header menu -->
+          <div class="col-sm-4 col-xs-12 top-left">
+              <a class="navbar-brand" href="https://swayam.gov.in">
+                  <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/swayam_logo.png" alt="swayam-logo">
+              </a>
+
+
+              <a href="https://swayam.gov.in/nc_details/NPTEL">
+                  <img src="https://storage.googleapis.com/swayam2_central/assets/img/swayam_images/NC_logo/NPTEL_logo_128.png" alt="nc-logo" width="48px" height="48px">
+              </a>
+
+          </div>
+          <div class="col-sm-8 col-xs-12">
+            <div class="top-navigation">
+                <!--<a href="/about">About Swayam</a> |-->
+                <!--<a href="/explorer">All Courses</a> |-->
+                <!--<a href="/nc_details/">National Coordinators</a> |-->
+                <!--<a href="https://nptel.ac.in/LocalChapter/">Local Chapters</a>-->
+                <div class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">mahamat.chamchadine.btech2019@sitpune.edu.in <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+
+
+
+
+
+
+
+
+
+
+
+                            <li>
+                                <a href="/profile">
+                                    <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_my_profile_normal.png" class="normalimg" alt="Go to my profile">
+                                    <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_my_profile_selected.png" class="selectedimg" alt="">
+                                    MY PROFILE
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://swayam.gov.in/mycourses">
+                                    <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_my_courses_normal.png" class="normalimg" alt="Go to my courses">
+                                    <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_my_courses_selected.png" class="selectedimg" alt="">
+                                    MY COURSES
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/mycertificates">
+                                    <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_my_certifications_normal.png"
+                                         class="normalimg" alt="Go to my courses">
+                                    <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_my_certifications_selected.png"
+                                         class="selectedimg" alt="">
+                                    MY CERTIFICATIONS
+                                </a>
+                            </li>
+
+
+
+                                <li class="divider"></li>
+
+
+                            <li>
+                                <a href="https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/logout?post_logout_redirect_uri=https://onlinecourses.nptel.ac.in/wso_logout">
+                                    <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_sign_out_normal.png" class="normalimg" alt="Go to Sign out">
+                                    <img src="https://storage.googleapis.com/swayam2-node/assets/img/swayam_images/icon_sign_out_selected.png" class="selectedimg" alt="">
+                                    SIGN-OUT
+                                </a>
+                            </li>
+                        </ul>
+
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Top Bar [END]-->
+</header>
+</body>
+        <!-- header ends -->
+
+
+
+
+<div id="courseSidenav" class="sidenav visible-xs visible-sm">
+  <div id="courseSidenavHeader">
+      <a href="javascript:void(0)" class="closebtn" style="color: #ffffff;" onclick="closeNav()">&times;</a>
+      Data Science for Engineers
+  </div>
+  <div class="gcb-html-hook" id="base-after-navbar-begins"><!-- base.after_navbar_begins --></div>
+        <div >
+
+          <a href="announcements" style="margin-top: 10px;"> <i class="fa fa-bell" aria-hidden="true" style="margin-right: 32px;width: 16px;"></i> Announcements</a>
+        </div>
+        <div >
+
+          <a href="course"> <i class="fa fa-list-alt" aria-hidden="true" style="margin-right: 32px;width: 16px;"></i> Course outline</a>
+        </div>
+        <div>
+
+          <a href="preview"> <i class="fa fa-info-circle" aria-hidden="true" style="margin-right: 32px;width: 16px;"></i> About the Course</a>
+        </div>
+        <hr style="margin: 15px 0;" />
+
+          <div >
+
+            <a href="forum"> <i class="fa fa-question-circle-o" style="margin-right: 32px;width: 16px;" aria-hidden="true"></i> Ask a Question</a>
+          </div>
+
+
+          <div class='active'>
+
+            <a href="student/home"> <i class="fa fa-line-chart" style="margin-right: 32px;width: 16px;" aria-hidden="true"></i> Course Progress</a>
+          </div>
+
+
+              <div >
+
+                <a href="student/mentor"> <i class="fa fa-user" style="margin-right: 32px;width: 16px;" aria-hidden="true"></i> Mentor</a>
+              </div>
+
+
+
+         <li class="active">
+
+            <a href="assignment_review">Review Assignment</a>
+          </li>
+        <div class="gcb-html-hook" id="base-before-navbar-ends"><!-- base.before_navbar_ends --></div>
+</div>
+
+  <!-- nav bar -->
+  <div class="gcb-nav gcb-complex" id="gcb-nav-x">
+    <div class="gcb-aux">
+      <a class="gcb-nav-course-title" href="https://swayam.gov.in/explorer?ncCode=NPTEL">NPTEL</a>
+      <span class="gcb-nav-course-title">&raquo;</span>
+      <a class="gcb-nav-course-title" href="course">Data Science for Engineers</a>
+      <div class="gcb-pull-right visible-lg visible-md"><ul class="clearfix">
+
+        <!-- left-aligned links in order -->
+        <div class="gcb-html-hook" id="base-after-navbar-begins"><!-- base.after_navbar_begins --></div>
+        <li >
+
+          <a href="announcements">Announcements</a>
+        </li>
+        <li >
+
+          <a href="preview">About the Course</a>
+        </li>
+
+          <li >
+
+            <a href="forum">Ask a Question</a>
+          </li>
+
+
+          <li class='active'>
+
+            <a href="student/home">Progress</a>
+          </li>
+
+
+              <li >
+
+                <a href="student/mentor">Mentor</a>
+              </li>
+
+
+
+
+          <li class="active">
+
+            <a href="assignment_review">Review Assignment</a>
+          </li>
+
+        <!---->
+
+        <!-- right-aligned links are in order -->
+       <!-- -->
+
+
+            <!-- <li class="gcb-pull-right">
+
+              <a href="/">My Courses</a>
+            </li> -->
+
+
+        <div class="gcb-html-hook" id="base-before-navbar-ends"><!-- base.before_navbar_ends --></div>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="outlineHeaderMobile text-center"> <span class="pull-left" style="padding: 2px;" onclick="openNav()"> <i class="fa fa-lg fa-bars" aria-hidden="true"></i> </span>
+    <!-- Comment: Blank div will get content added dynamically -->
+    <div style="display: inline-block;"> </div>
+</div>
+
+
+    <!-- top section -->
+
+   <div id="gcb-main-body" class="clearfix">
+    <div class="is-wrapper">
+      <div class="gcb-aux">
+
+
+        <div class="gcb-html-hook" id="base-after-top-content-ends"><!-- base.after_top_content_ends --></div>
+
+        <!-- main section -->
+
+
+<div id="gcb-main">
+
+   <div class="hidden-xs hidden-sm" style="display: inline-block;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="gcb-nav" id="gcb-nav-left" role="navigation">
+
+
+
+
+
+  <!-- Comment : Columns layout used to for proper layouting. 'gcb-col-12' - Columns 12 taken to have full width instead of 90% -->
+  <div class="gcb-cols">
+  <div class='gcb-col-12 gcb-aside'>
+  <h2>Course outline</h2>
+
+
+
+          <div class="unit_navbar" id="unit_navbar_1" >
+  <div  class="unit_heading"
+    id="unit_heading_1"
+    onclick='toggleSubUnitNavBar("subunit_navbar_1")'><a href="" onclick="javascript:event.preventDefault();">
+     How does an NPTEL online course work? </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_1">
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=2" id="lesson_2">Welcome to NPTEL open online course</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-2">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=3" id="lesson_3">Information about the course and accessing the content</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-3">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=4" id="lesson_4">Announcement</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-4">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=5" id="lesson_5">Discussion Forum: Do you have a doubt or question</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-5">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=6" id="lesson_6">Know your scores in the Assignments</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-6">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=7" id="lesson_7">Certification criteria</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-7">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=8" id="lesson_8">Best practices to maximize the learning from the online course</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-8">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=9" id="lesson_9">Guidelines and Timelines</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-9">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=10" id="lesson_10">What you should know about the final certification exams</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-10">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=11" id="lesson_11">MCQ and MSQ Assignment</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-11">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=12" id="lesson_12">Numerical and Short Answer Assignment</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-12">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=13" id="lesson_13">Subjective Assignment ( Essay Type)</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-13">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=14" id="lesson_14">Subjective Assignment (Scan and Upload)</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-14">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=1&lesson=15" id="lesson_15">Programming Assignment</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-15">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_16" >
+  <div  class="unit_heading"
+    id="unit_heading_16"
+    onclick='toggleSubUnitNavBar("subunit_navbar_16")'><a href="" onclick="javascript:event.preventDefault();">
+     Setup Guide </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_16">
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=16&lesson=17" id="lesson_17">Setup guide</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-17">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_18" >
+  <div  class="unit_heading"
+    id="unit_heading_18"
+    onclick='toggleSubUnitNavBar("subunit_navbar_18")'><a href="" onclick="javascript:event.preventDefault();">
+     Pre Course Material </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_18">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=18&lesson=19" id="lesson_19">Pre Course Material</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-19">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_20" >
+  <div  class="unit_heading"
+    id="unit_heading_20"
+    onclick='toggleSubUnitNavBar("subunit_navbar_20")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 0 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_20">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=137" id="assessment_137">Practice: Week 0 :  Assignment 0</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-137">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_23" >
+  <div  class="unit_heading"
+    id="unit_heading_23"
+    onclick='toggleSubUnitNavBar("subunit_navbar_23")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 1 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_23">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=24" id="lesson_24">Data science for engineers Course philosophy and expectation </a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-24">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=25" id="lesson_25">Introduction to R </a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-25">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=26" id="lesson_26">Introduction to R (Continued)</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-26">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=27" id="lesson_27">Variables and datatypes in R</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-27">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=28" id="lesson_28">Data frames</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-28">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=29" id="lesson_29">Recasting and joining of dataframes</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-29">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=30" id="lesson_30">Arithmetic,Logical and Matrix operations in R</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-30">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=31" id="lesson_31">Advanced programming in R : Functions</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-31">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=32" id="lesson_32">Advanced Programming in R : Functions (Continued)</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-32">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=33" id="lesson_33">Control structures </a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-33">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=34" id="lesson_34">Data visualization in R Basic graphics</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-34">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=35" id="lesson_35">Common doubts asked on R Language (Week-1)</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-35">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=127" id="assessment_127">Practice: Week 1 : Practice Assignment 1</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-127">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=138" id="assessment_138">Quiz: Week 1 : Assignment 1</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-138">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=37" id="lesson_37">Week 1 Feedback Form: Data Science for Engineers</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-37">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=23&lesson=144" id="lesson_144">Assignment 1 solution</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-144">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_38" >
+  <div  class="unit_heading"
+    id="unit_heading_38"
+    onclick='toggleSubUnitNavBar("subunit_navbar_38")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 2 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_38">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=39" id="lesson_39">Linear Algebra for Data science</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-39">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=40" id="lesson_40">Solving Linear Equations</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-40">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=41" id="lesson_41">Solving Linear Equations ( Continued )</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-41">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=42" id="lesson_42">Linear Algebra - Distance,Hyperplanes and Halfspaces,Eigenvalues,Eigenvectors</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-42">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=43" id="lesson_43">Linear Algebra  - Distance,Hyperplanes and Halfspaces,Eigenvalues,Eigenvectors ( Continued 1)</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-43">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=44" id="lesson_44">Linear Algebra - Distance,Hyperplanes and Halfspaces,Eigenvalues,Eigenvectors ( Continued 2 )</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-44">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=45" id="lesson_45">Linear Algebra  - Distance,Hyperplanes and Halfspaces,Eigenvalues,Eigenvectors ( Continued 3 )</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-45">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=46" id="lesson_46">Common doubts asked on Linear Algebra</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-46">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=128" id="assessment_128">Practice: Week 2 : Practice Assignment 2</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-128">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=139" id="assessment_139">Quiz: Week 2 : Assignment 2</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-139">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=48" id="lesson_48">Week 2 Feedback Form: Data Science for Engineers</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-48">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=38&lesson=145" id="lesson_145">Assignment 2 solution</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-145">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_49" >
+  <div  class="unit_heading"
+    id="unit_heading_49"
+    onclick='toggleSubUnitNavBar("subunit_navbar_49")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 3 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_49">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=49&lesson=50" id="lesson_50">Statistical Modelling</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-50">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=49&lesson=51" id="lesson_51">Random Variables and Probability Mass/Density Functions</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-51">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=49&lesson=52" id="lesson_52">Sample Statistics </a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-52">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=49&lesson=53" id="lesson_53">Hypotheses Testing</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-53">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=49&lesson=54" id="lesson_54">FAQ</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-54">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=129" id="assessment_129">Practice: Week 3 : Practice Assignment 3</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-129">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=142" id="assessment_142">Quiz: Week 3 : Assignment 3</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-142">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=49&lesson=56" id="lesson_56">Week 3 Feedback Form: Data Science for Engineers</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-56">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=49&lesson=147" id="lesson_147">Assignment 3 solution</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-147">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_57" >
+  <div  class="unit_heading"
+    id="unit_heading_57"
+    onclick='toggleSubUnitNavBar("subunit_navbar_57")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 4 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_57">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=57&lesson=58" id="lesson_58">Optimization for Data Science</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-58">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=57&lesson=59" id="lesson_59">Unconstrained Multivariate Optimization</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-59">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=57&lesson=60" id="lesson_60">Unconstrained Multivariate Optimization ( Continued )</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-60">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=57&lesson=61" id="lesson_61">Gradient ( Steepest ) Descent ( OR ) Learning Rule</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-61">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=57&lesson=62" id="lesson_62">FAQ</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-62">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=130" id="assessment_130">Practice: Week 4 : Practice Assignment 4</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-130">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=143" id="assessment_143">Quiz: Week 4 : Assignment 4</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-143">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=57&lesson=64" id="lesson_64">Week 4 Feedback Form: Data Science for Engineers</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-64">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=57&lesson=149" id="lesson_149">Assignment 4 solution</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-149">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_65" >
+  <div  class="unit_heading"
+    id="unit_heading_65"
+    onclick='toggleSubUnitNavBar("subunit_navbar_65")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 5 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_65">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=65&lesson=66" id="lesson_66">Multivariate Optimization With Equality Constraints</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-66">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=65&lesson=67" id="lesson_67">Multivariate Optimization With Inequality Constraints</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-67">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=65&lesson=68" id="lesson_68">Introduction to Data Science</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-68">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=65&lesson=69" id="lesson_69">Solving Data Analysis Problems - A Guided Thought Process</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-69">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=65&lesson=70" id="lesson_70">Dataset</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-70">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=65&lesson=71" id="lesson_71">FAQ</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-71">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=131" id="assessment_131">Practice: Week 5 : Practice Assignment 5</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-131">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=146" id="assessment_146">Quiz: Week 5 : Assignment 5</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-146">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=65&lesson=73" id="lesson_73">Week 5 Feedback Form: Data Science for Engineers</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-73">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=65&lesson=151" id="lesson_151">Assignment 5 solution</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-151">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_74" >
+  <div  class="unit_heading"
+    id="unit_heading_74"
+    onclick='toggleSubUnitNavBar("subunit_navbar_74")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 6 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_74">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=75" id="lesson_75">Module : Predictive Modelling</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-75">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=76" id="lesson_76">Linear Regression</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-76">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=77" id="lesson_77">Model Assessment</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-77">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=78" id="lesson_78">Diagnostics to Improve Linear Model Fit</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-78">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=79" id="lesson_79">Simple Linear Regression Model Building</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-79">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=80" id="lesson_80">Simple Linear Regression Model Assessment</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-80">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=81" id="lesson_81">Simple Linear Regression Model Assessment ( Continued )</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-81">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=82" id="lesson_82">Muliple Linear Regression</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-82">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=83" id="lesson_83">Dataset</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-83">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=84" id="lesson_84">FAQ</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-84">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=132" id="assessment_132">Practice: Week 6 : Practice Assignment 6</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-132">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=148" id="assessment_148">Quiz: Week 6 : Assignment 6</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-148">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=86" id="lesson_86">Week 6 Feedback Form: Data Science for Engineers</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-86">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=74&lesson=154" id="lesson_154">Assignment 6 solution</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-154">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_87" >
+  <div  class="unit_heading"
+    id="unit_heading_87"
+    onclick='toggleSubUnitNavBar("subunit_navbar_87")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 7 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_87">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=88" id="lesson_88">Cross Validation</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-88">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=89" id="lesson_89">Multiple Linear Regression Modelling Building and Selection</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-89">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=90" id="lesson_90">Classification</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-90">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=91" id="lesson_91">Logisitic Regression</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-91">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=92" id="lesson_92">Logisitic Regression ( Continued )</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-92">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=93" id="lesson_93">Performance Measures</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-93">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=94" id="lesson_94">Logisitic Regression Implementation in R</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-94">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=95" id="lesson_95">Dataset</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-95">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=96" id="lesson_96">FAQ</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-96">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=133" id="assessment_133">Practice: Week 7 : Practice Assignment 7</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-133">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=150" id="assessment_150">Quiz: Week 7 : Assignment 7</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-150">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=98" id="lesson_98">Week 7 Feedback Form: Data Science for Engineers</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-98">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=87&lesson=155" id="lesson_155">Assignment 7 solution</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-155">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_99" >
+  <div  class="unit_heading"
+    id="unit_heading_99"
+    onclick='toggleSubUnitNavBar("subunit_navbar_99")'><a href="" onclick="javascript:event.preventDefault();">
+     Week 8 </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_99">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=100" id="lesson_100">K - Nearest Neighbors (kNN)</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-100">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=101" id="lesson_101">K - Nearest Neighbors implementation in R</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-101">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=102" id="lesson_102">K - means Clustering</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-102">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=103" id="lesson_103">K - means implementation in R</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-103">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=104" id="lesson_104">FAQ</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-104">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=105" id="lesson_105">Data Science for engineers - Summary</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-105">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=106" id="lesson_106">Datasets</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-106">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=134" id="assessment_134">Practice: Week 8 : Practice Assignment 8</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-134">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+
+
+
+            <a href="assessment?name=152" id="assessment_152">Quiz: Week 8 : Assignment 8</a>
+
+            <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-152">
+</div>
+
+        </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=108" id="lesson_108">Week 8 Feedback Form: Data Science for Engineers</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-108">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=99&lesson=156" id="lesson_156">Assignment 8 solution</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-156">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_110" >
+  <div  class="unit_heading"
+    id="unit_heading_110"
+    onclick='toggleSubUnitNavBar("subunit_navbar_110")'><a href="" onclick="javascript:event.preventDefault();">
+     Text Transcripts </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_110">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=110&lesson=111" id="lesson_111">English Transcript</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-111">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=110&lesson=112" id="lesson_112">Marathi Transcript</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-112">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=110&lesson=113" id="lesson_113">Hindi Transcript</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-113">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=110&lesson=114" id="lesson_114">Bengali Transcript</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-114">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=110&lesson=115" id="lesson_115">Gujarati Transcript</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-115">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=110&lesson=116" id="lesson_116">Tamil Transcript</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-116">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=110&lesson=117" id="lesson_117">Telugu Transcript</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-117">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_118" >
+  <div  class="unit_heading"
+    id="unit_heading_118"
+    onclick='toggleSubUnitNavBar("subunit_navbar_118")'><a href="" onclick="javascript:event.preventDefault();">
+     Download Videos </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_118">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=118&lesson=119" id="lesson_119">MP4 Videos</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-119">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_120" >
+  <div  class="unit_heading"
+    id="unit_heading_120"
+    onclick='toggleSubUnitNavBar("subunit_navbar_120")'><a href="" onclick="javascript:event.preventDefault();">
+     Books </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_120">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=120&lesson=121" id="lesson_121">English Book </a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-121">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=120&lesson=122" id="lesson_122">Marathi book</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-122">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=120&lesson=123" id="lesson_123">Hindi book</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-123">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=120&lesson=124" id="lesson_124">Tamil Books</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-124">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=120&lesson=125" id="lesson_125">Bengali Book</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-125">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=120&lesson=126" id="lesson_126">Gujarati Book</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-126">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=120&lesson=141" id="lesson_141">Telugu Book</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-141">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+
+
+          <div class="unit_navbar" id="unit_navbar_135" >
+  <div  class="unit_heading"
+    id="unit_heading_135"
+    onclick='toggleSubUnitNavBar("subunit_navbar_135")'><a href="" onclick="javascript:event.preventDefault();">
+     Problem Solving Session </a></div>
+
+      <ul class="subunit_navbar_other" id="subunit_navbar_135">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=135&lesson=136" id="lesson_136">Problem Solving Session </a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-136">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li  class="subunit_other" >
+  <div class="gcb-left-activity-title-with-progress gcb-nav-pa">
+      <a href="unit?unit=135&lesson=153" id="lesson_153">Survey on Problem Solving sessions - Data Science for Engineers( noc22_cs72 )</a>
+
+        <div class="gcb-progress-icon-holder"><img src="https://storage.googleapis.com/swayam2-node/assets/img/not_started.png"
+    alt="Not Started"
+    title="Not Started"
+    class="gcb-progress-icon"
+    id="progress-state-html-153">
+</div>
+
+    </div></li>
+
+
+
+
+
+
+
+
+
+
+          </ul></div>
+
+
+
+    &nbsp;
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+   </div>
+
+
+  <!-- Comment : Broken syntax fixed, below table can be viewed by scrolling and without distrubing other page content -->
+  <div class="gcb-article tab-content" role="main" style="margin: 10px 0;" id="gcb-content">
+
+
+  <div>
+    <h1 class="gcb-unit-header">
+
+      Mahamat Adam
+    </h1>
+  </div>
+
+
+
+
+    <style>
+  @media screen and (min-width: 992px) {
+     .gcb-article{
+       margin: 20px 0 !important;
+     }
+  }
+  .pageFont{
+    font-size: 16px;
+  }
+  .rowContent{
+    padding: 10px 20px;
+  }
+  .gcb-unit-header{
+    border-bottom: none;
+    padding-left: 20px;
+  }
+  p a{
+    padding-left: 20px;
+    font-size: 16px;
+  }
+  a{
+    color: #347AB7;
+  }
+</style>
+
+<div class="pageFont">
+
+
+<div class="rowContent">Date enrolled: 2022-07-22</div>
+
+<div class="rowContent">Email: mahamat.chamchadine.btech2019@sitpune.edu.in</div>
+
+<div class="rowContent">Name: Mahamat Adam</div>
+
+<hr/>
+
+
+<h3 class="rowContent">Assessment scores</h3>
+
+
+<div class="rowContent">
+  Week 1 : Assignment 1:
+
+       <span id="assessment-score-Week 1 : Assignment 1">&nbsp;&nbsp;<b>100.0</b></span>
+
+</div>
+
+<div class="rowContent">
+  Week 2 : Assignment 2:
+
+       <span id="assessment-score-Week 2 : Assignment 2">&nbsp;&nbsp;<b>100.0</b></span>
+
+</div>
+
+<div class="rowContent">
+  Week 3 : Assignment 3:
+
+  <span id="assessment-score-Week 3 : Assignment 3">&nbsp;&nbsp;&nbsp;&nbsp;-</span>
+
+</div>
+
+<div class="rowContent">
+  Week 4 : Assignment 4:
+
+  <span id="assessment-score-Week 4 : Assignment 4">&nbsp;&nbsp;<b>80.0</b></span>
+
+</div>
+
+<div class="rowContent">
+  Week 5 : Assignment 5:
+
+       <span id="assessment-score-Week 5 : Assignment 5">&nbsp;&nbsp;<b>100.0</b></span>
+
+</div>
+
+<div class="rowContent">
+  Week 6 : Assignment 6:
+
+  <span id="assessment-score-Week 6 : Assignment 6">&nbsp;&nbsp;<b>62.0</b></span>
+
+</div>
+
+<div class="rowContent">
+  Week 7 : Assignment 7:
+
+       <span id="assessment-score-Week 7 : Assignment 7">&nbsp;&nbsp;&nbsp;&nbsp;-</span>
+
+</div>
+
+<div class="rowContent">
+  Week 8 : Assignment 8:
+
+  <span id="assessment-score-Week 8 : Assignment 8">&nbsp;&nbsp;<b>100.0</b></span>
+
+</div>
+
+
+<hr/>
+
+<!-- Comment: Commented title below time being as it was getting irrelevant to content below it-->
+<!--<h3 class="rowContent">Subscriptions</h3>-->
+
+
+
+
+        <div class="rowContent">
+        Announcement: <br/>You are currently receiving course related emails. <a href="https://onlinecourses.nptel.ac.in/noc22_cs72/modules/unsubscribe?email=mahamat.chamchadine.btech2019%40sitpune.edu.in&amp;s=BjxoOpffurQyfzwFEAnAZA%3D%3D">Click here to unsubscribe.</a>
+        </div>
+      </tr>
+
+
+
+        <div class="rowContent">
+        Discussion forum: <br/>If you want to unsubscribe from forum <a href="https://onlinecourses.nptel.ac.in/noc22_cs72/modules/unsubscribe?email=mahamat.chamchadine.btech2019%40sitpune.edu.in&amp;s=BjxoOpffurQyfzwFEAnAZA%3D%3D&amp;action=forum">Click here</a>
+        </div>
+      </tr>
+
+
+
+</div>
+
+<br/>
+
+<script>
+$(".outlineHeaderMobile div").text("Course Progress");
+</script>
+
+
+      <p>
+        <a href="/profile">
+
+          Manage course registration from your profile
+        </a>
+      </p>
+
+
+
+
+  </div>
+    <script>
+
+    showButterBar();
+    </script>
+</div>
+
+        <div class="gcb-html-hook" id="base-after-main-content-ends"><!-- base.after_main_content_ends --></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+    <!-- footer section -->
+  <!--<div class="gcb-footer" id="gcb-footer">
+        <div class="gcb-aux">
+        <style>
+  .gcb-terms-block2 {
+          margin: auto;
+    max-width: 500px;
+          text-align: center;
+  }
+        </style>
+        <div id="gcb-terms"  class="gcb-terms-block2">
+          <p>&copy; 2014 NPTEL -
+            <a onclick='showPopupDiv("termsDiv"); return false;'>
+
+              Privacy & Terms
+            </a> -
+            <a onclick='showPopupDiv("honorDiv"); return false;'>
+
+              Honor Code
+            </a> -
+            <a onclick='showPopupDiv("faqDiv"); return false;'>
+
+              FAQs
+            </a>
+
+              <script type="text/javascript">
+              (function() {
+               var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+               po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
+               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+               })();
+              </script>
+               - <span class="plusone-button" id="plusone-3" style="height: 20px; width: 70px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: top; background-position: initial initial; background-repeat: initial initial; ">
+                <g:plusone size="medium"></g:plusone>
+              </span>
+
+          </p>
+        </div>
+        </div>
+      <div id="gcb-footer-global" role="contentinfo">
+        <div class="gcb-aux">
+          <div class="footer-logo-block">
+            <section>
+              <h3>A project of</h3>
+                  <a href="http://nptel.iitm.ac.in" target="_blank">
+                  <img src="https://storage.googleapis.com/swayam2-node/modules/nptel/assets/img/footer-logo-nptel.png"/>
+                  </a>
+            </section>
+          </div>
+          <div class="footer-logo-block">
+            <section>
+              <h3>In association with</h3>
+                  <a href="http://www.nasscom.in" target="_blank">
+                  <img src="https://storage.googleapis.com/swayam2-node/modules/nptel/assets/img/footer-logo-nasscom.png"/>
+                  </a>
+            </section>
+          </div>
+          <div class="footer-logo-block">
+            <section>
+              <h3>Funded by</h3>
+                  <a href="http://mhrd.gov.in" target="_blank">
+                  <img src="https://storage.googleapis.com/swayam2-node/modules/nptel/assets/img/footer-mhrd.png"/>
+                  </a>
+            </section>
+          </div>
+          <div class="footer-logo-block">
+            <section>
+              <h3>Powered by</h3>
+                  <a href="http://www.google.com" target="_blank">
+                  <img src="https://storage.googleapis.com/swayam2-node/modules/nptel/assets/img/footer-logo-google.png"/>
+                  </a>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-46447969-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!---->
+    <div id="back-to-top" style="bottom: 20px;right: 20px;position: fixed;display: none;z-index: 1" onclick="topFunction()">
+      <img src="https://storage.googleapis.com/swayam2-node/assets/img/Up_arrow_48.png">
+</div>
+
+    <script>
+      backtotop = document.getElementById("back-to-top");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            let threshold_pixel_value=100;
+            if (document.body.scrollTop > threshold_pixel_value || document.documentElement.scrollTop > threshold_pixel_value) {
+                backtotop.style.display = "block";
+            } else {
+                backtotop.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            $(window).scrollTop(0);
+        }
+    </script>
+  </body>
+</html>
